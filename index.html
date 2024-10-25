@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Audio Player</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" sizes = "16x16">
+    <script defer src='main.js'></script>
+</head>
+<body>
+    <div class='container'>
+        <header>
+            <h1>Audio Player</h1>
+        </header>
+        <main>
+            <div class="vinyl">
+                <div class="vinyl-record">
+                    <img alt="vinyl record" src="assets/images/vinil.png" id="vinyl-record">
+                    <div class="album-cover">
+                        <img alt="album-cover" src="assets/images/audioslave-cover.jpg">
+                    </div>
+                </div>        
+            </div>
+            <div class="player">
+                <div class="active">
+                    <div class="track-cover">
+                        <img alt="album-cover" src="assets/images/audioslave-cover.jpg">
+                    </div>
+                    <div class="active-content">
+                        <h2 class="active-track-name">Audioslave - I'm the Highway</h2>
+                        <div class="controls">
+
+                            <div class="volume" title="Volume">
+                                <div class="icon sound">
+                                    <img alt="volume-icon" src="assets/images/volume.png">
+                                </div> 
+                                <input min='0' max='1' step='0.1' type="range" name="volume" value='0.5' class="sound-volume">
+                            </div>
+
+                            <div class="arrow">
+                                <div class="arrow-left icon">
+                                    <img alt="previous song" src="assets/images/arrow.png">
+                                  </div>
+                            </div>
+
+                            <div class="play">
+                                <div class="play icon paused">
+                                    <img alt="play" src="assets/images/play.png">
+                                </div>
+                            </div>
+
+                            <div class="arrow">
+                                <div class="arrow-right icon">
+                                    <img alt="next song" src="assets/images/arrow.png">
+                                  </div>
+                            </div>
+                           
+                        </div>
+                        <div class="timeline">
+                            <span class="time-passed">00:00</span>
+                            <span class="time-rest">04:32</span>
+                        </div>
+                        <div class="track">
+                            <input min='0' max='100' step='1' type="range" name="progress" value='0'/>
+                        </div>
+                    </div>
+                </div>
+                <div class="list">
+                    <span id="1" data-id="1">1. Audioslave - I'm the Highway</span>
+                    <span id="2" data-id="2">2. Collective Soul - December</span>
+                    <span id="3" data-id="3">3. U2 - Sleep like a baby tonight</span>
+                    <span id="4" data-id="4">4. Nickelback - Good times gone</span>
+                    <span id="5" data-id="5">5. Soundgarden - Fell on black days</span>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <a href="https://rs.school/courses/javascript-preschool-ru"><img alt="RS School logo" src="assets/images/rss-logo.svg"></a>
+            <a href="https://github.com/ElenaBarteneva/"><img alt="Github logo" src="assets/images/githib.png"></a>
+            <span>2024</span>
+        </footer>
+    </div>
+</body>
+</html>

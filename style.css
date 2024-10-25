@@ -1,0 +1,320 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(165, 139, 108);
+    background-size: cover;
+    backdrop-filter: blur(20px);
+    margin: 0;
+    overflow: hidden;
+}
+
+.container {
+    width: 70vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header {
+    width: 100%;
+    height: 15%;
+}
+
+h1 {
+    font-family: "Fugaz";
+    font-size: 5vw;
+    color: rgb(80, 59, 35);
+    text-align: center;
+    text-shadow: rgb(255, 255, 255) 1px 0 10px;
+    margin: 2%;
+}
+
+
+
+main {
+    position: relative;
+    width: 100%;
+    height: 32vw;
+}
+
+
+.vinyl {
+    width: 42%;
+    position: absolute;
+    height: 100%;
+    z-index: 2;
+    display: grid;
+    align-items: center;
+    margin-left: 2%;
+}
+
+.rotate {
+    transition: all 0.5s ease;
+    animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(360deg);
+  }
+}
+
+
+.vinyl-record {
+    height: 100%;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+#vinyl-record {
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: 1;
+    grid-area: 1 / 1;
+}
+
+.album-cover {
+    max-width: 40%;
+    max-height: 40%;
+    position: absolute;
+    overflow: hidden;
+    z-index: 0;
+    grid-area: 1 / 1;
+}
+
+.album-cover img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.player {
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    background: url(assets/images/player-back.png);
+    background-size: 100% 100%;
+    border-radius: 5%;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.active {
+    width: 90%;
+    padding: 3% 4%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    gap: 5%;
+}
+
+.track-cover {
+    height: 100%;
+    border-radius: 6%;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.track-cover img {
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6%;
+}
+
+.active-content {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.active-track-name {
+    height: 83%;
+    font-family: Arial, Helvetica, sans-serif;
+    color:rgb(80, 59, 35);
+    text-shadow: rgba(0, 0, 0, 0.5) 0px 5px 10px;
+    font-size: 2vw;
+    margin: 0;
+}
+
+.controls {
+    height: 25%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.volume {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 8%;
+}
+
+.icon.sound img {
+    width: auto;
+    height: 2.2vw;
+} 
+
+.icon img {
+    width: 2.5vw;
+    height: 100%;
+    object-fit: cover;
+}
+
+input {
+    width: 80%;
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    background-color: rgb(80, 59, 35);
+    border-radius: 0.5rem;
+    height: 0.3rem;  
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    margin-top: -0.3rem; 
+    background-color:rgb(80, 59, 35);
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    height: 1rem;
+    width: 0.4rem;
+    border-radius: 20%;
+}
+
+.arrow-left {
+    transform: rotate(180deg);
+}
+
+input[type="range"]:focus::-webkit-slider-thumb {   
+    border-radius: 3%;
+    outline: 0.1rem solid rgba(80, 59, 35, 0.438);
+    outline-offset: 0.125rem; 
+}
+
+.track {
+    display: flex;
+    align-items: center;
+    height: 25%;
+    width: 100%;
+}
+
+.track input {
+    width: 100%;
+}
+
+.arrow:hover, .play.icon:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.arrow, .play.icon {
+    transition: all 0.3s ease;
+    margin-right: 0;
+}
+
+.timeline {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.timeline span {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1vw;
+    color:rgb(80, 59, 35);
+    vertical-align: middle;
+    text-shadow: rgba(0, 0, 0, 0.5) 0px 5px 10px;
+}
+
+.list span.active-song {
+    color:black;
+}
+
+.list {
+    width: 100%;
+    padding: 0 8% 2%;
+}
+
+
+.list span {
+    display: block;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2vw;
+    color:rgb(80, 59, 35);
+    text-shadow: rgba(0, 0, 0, 0.5) 0px 5px 10px;
+    transition: all 0.3s ease;
+    margin: 2% 0 3%;
+}
+
+.list span:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+footer {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2%;
+}
+
+footer img {
+    height: 5vh;
+    margin-top: 15%;
+    transition: all 0.3s ease;
+}
+
+
+footer a:hover img {
+    transform: scale(1.1);
+}
+
+footer span {
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 2vw;
+    color:rgb(80, 59, 35);
+    vertical-align: middle;
+    transition: all 0.3s ease; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@font-face {
+    font-family: "Fugaz"; 
+    src: url("assets/fonts/Fugaz.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+  } 
